@@ -1,0 +1,44 @@
+/* Infoarea CSS document */
+/* Defines styling for the info area and play button on the gamescreen */
+
+.infotext {
+  margin: 5px;
+  font-size: 1.2rem;
+}
+
+#budget {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.5rem;
+}
+
+.funded {
+  color: var(--green-colour);
+}
+
+.underfunded {
+  color: var(--red-colour);
+}
+
+#playbutton {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 10px;
+  border: 2px solid var(--emph-a-colour);
+  background-color: var(--bg-header-colour);
+  margin: 1rem 1rem 1.5rem 1rem;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+#playbutton:hover {
+  border: 2px solid var(--emph-b-colour);
+}
+
+#playbuttontext {
+  color: var(--text-colour);
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 0;
+}

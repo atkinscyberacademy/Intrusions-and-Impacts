@@ -1,0 +1,93 @@
+/* Header CSS document */
+/* Defines styles for the page header */
+
+header {
+  margin: 0;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: var(--bg-header-colour);
+  margin-bottom: 10px;
+}
+
+#headerimg {
+  margin: 0;
+  padding: 0 0 0 5px;
+  height: 3rem;
+  width: 3rem;
+  object-fit: contain;
+}
+
+#headertitle {
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--text-colour);
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+#headertitle:hover {
+  color: var(--emph-a-colour);
+}
+
+#headerleft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#headerright {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.headerlink {
+  margin: 0 10px;
+  padding: 20px 20px;
+  border: 0;
+  width: 12rem;
+  border-radius: 5px;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--bg-page-colour);
+  color: var(--text-colour);
+}
+
+.headerlink:hover {
+  background-color: var(--emph-b-colour);
+}

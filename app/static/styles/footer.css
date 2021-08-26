@@ -1,0 +1,8 @@
+/* Footer CSS document */
+/* Defines styles for the page footer */
+
+footer {
+    background-color: var(--bg-header-colour);
+    text-align: center;
+    font-size: 0.9rem;
+}

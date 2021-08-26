@@ -1,0 +1,91 @@
+/* Infopage CSS document */
+/* Defines styles for elements used on info pages*/
+
+#infopagecontent {
+  width: 70%;
+  background-color: var(--bg-header-colour);
+  margin: 10px auto;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 0;
+  min-height: 25rem;
+  box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+.homeimg {
+  display: block;
+  margin: 10px auto;
+  height: 15rem;
+  width: 15rem;
+  object-fit: contain;
+}
+
+.homehead {
+  display: block;
+  text-align: center;
+  font-size: 4rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+.homesubtitle {
+  display: block;
+  text-align: center;
+  margin: 0 auto 30px;
+  font-size: 2rem;
+  font-style: italic;
+  letter-spacing: 5px;
+}
+
+#atkinslogo {
+  display: block;
+  margin: -70px auto;
+  height: 15rem;
+  width: 15rem;
+  object-fit: contain;
+}
+
+.ip-sectionhead {
+  display: block;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 5px;
+  padding: 10px 0 0 0;
+}
+
+.ip-text {
+  display: block;
+  margin: 20px;
+}
+
+.ip-list {
+  list-style: none;
+}
+
+.ip-button {
+  display: block;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 10px auto;
+  padding: 20px;
+  border: 0;
+  border-radius: 5px;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  width: 30%;
+  transition-duration: 0.3s;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--bg-page-colour);
+  color: var(--text-colour);
+  cursor: pointer;
+}
+
+.ip-button:hover {
+  background-color: var(--emph-b-colour);
+}
+
+
+.understatedlink {
+  color: var(--text-colour);
+}

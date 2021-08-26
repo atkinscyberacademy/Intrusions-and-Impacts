@@ -1,0 +1,128 @@
+{% extends "base.html.njk" %}
+
+{% block meta%}
+<link rel="stylesheet" href="styles/playspace.css" type="text/css">
+<link rel="stylesheet" href="styles/card.css" type="text/css">
+<link rel="stylesheet" href="styles/modal.css" type="text/css">
+<link rel="stylesheet" href="styles/dragdrop.css" type="text/css">
+<link rel="stylesheet" href="styles/infoarea.css" type="text/css">
+<link rel="stylesheet" href="styles/graphics.css" type="text/css">
+{% endblock %}
+
+{% block content %}
+    <div id="playspace">
+        <div id="leftcol" class="column">
+            <p class="colhead">Defences available:</p>
+            <div id="unstageddeck" class="carddeck scroll-y">
+                {% for card in defences %}
+                {% if card.prerequisite == -1 %}
+                <div id="{{ 'card' + card.id }}" class="card" onclick="showmodal({{ card.id }})" draggable="true" ondragstart="dragStart(event)" ondragend="dragStop(event)">
+                    <p class="card-title">{{ card.name }}</p>
+                    <img src="/images/cards/{{ card.image }}" class="card-image" alt="Image of {{ card.name }}">
+                    <p class="card-cost">{{ '£' + card.cost | moneycomma }}</p>
+                </div>
+                {% else %}
+                <div id="{{ 'card' + card.id }}" class="card unplayable" onclick="showmodal({{ card.id }})" draggable="true" ondragstart="dragStart(event)" ondragend="dragStop(event)">
+                    <p class="card-title">{{ card.name }}</p>
+                    <img src="/images/cards/{{ card.image }}" class="card-image" alt="Image of {{ card.name }}">
+                    <p class="card-cost">{{ '£' + card.cost | moneycomma }}</p>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <div id="leftdrag" class="dragspace droppable" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <span class="dragspacetext">Drag cards here</span>
+            </div>
+        </div>
+        <div id="midcol" class="column">
+            <div id="graphicsboard">
+                <img src="/images/board/baseplate.png" alt="Base image of AquaVolt Power Plant" class="baseplateimage">
+                {% for card in defences %}
+                <img src="{{ '/images/board/' + card.graphic }}" alt="{{ 'Graphics overlay for ' + card.name }}" id="{{ 'card' + card.id + 'graphic' }}" class="overlayimage">
+                {% endfor %}
+                <img src="/images/board/hammersteve.png" alt="Image of Cyber Steve holding a hammer" id="workersteve" class="workerimage">
+            </div>
+            <p class="colhead">Defences to play:</p>
+            <div id="staging">
+                <div id="stageddeck" class="carddeck scroll-x">
+                </div>
+                <div id="stagedrag" class="dragspace droppable" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <span class="dragspacetext">Drag cards here</span>
+                </div>
+                <div id="infoarea">
+                    <p id="scoredisplay" class="infotext good">0 Points</p>
+                    <p id="turndisplay" class="infotext">Year 1</p>
+                    <p class="infotext">Funds remaining:</p>
+                    <p id="budget" class="infotext">£100,000</p>
+                    <button id="playbutton" onclick="doturn()">
+                        <p id="playbuttontext">Play</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="rightcol" class="column">
+            <p class="colhead">Defences Played:</p>
+            <div id="playeddeck" class="carddeck scroll-y">
+            </div>
+        </div>
+    </div>
+    {% for card in defences %}
+    <div id="{{ 'card' + card.id + 'modal' }}" class="modal cardmodal">
+        <div class="cardmodalcontent">
+            <p class="big-card-title">{{ card.name }}</p>
+            <img src="/images/cards/{{ card.image }}" class="big-card-image" alt="Large image of {{ card.name }}">
+            <p class="big-card-cost">{{ '£' + card.cost | moneycomma }}</p>
+            <p class="big-card-shortdesc">{{ card.shortdesc }}</p>
+            <p class="big-card-longdesc">{{ card.longdesc }}</p>
+            <div class="modallinkspace">
+                <a href="{{ card.outlink }}" class="modallink" target="_blank">More info</a>
+                <p class="modallink togglestage" onclick="togglestage({{ card.id }})">Play card</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <div id="welcomemodal" class="modal infomodal">
+        <div class="infomodalcontent">
+            <div class="modalheader">
+                <p class="info-header-text">Intrusions and Impact</p>
+            </div>
+            <div class="modalbody">
+                <p class="stinger">Congratulations on your new job as Head of Cyber Security at AquaVolt Power!</p>
+                <p class="info-body-text">You'll be on-site at our hydro-electric power plant for four years, and you'll get a budget of £100,000 per year to install and upgrade our Cyber Security systems. Remember - your decisions are the only things between our power plant and all the viruses, hackers, and organised criminals out there. Think strategically!</p>
+                <p class="stinger">Four Years<br>£100,000 Pounds<br>Can you keep the plant safe?</p>
+                <div class="modallinkspace">
+                    <a href="/howtoplay" class="modallink">Help!</a>
+                    <p class="modallink" onclick="initialise()">Let's Play!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="conseqmodal" class="modal infomodal">
+        <div class="infomodalcontent">
+            <div class="modalheader">
+                <p class="info-header-text">Consequences</p>
+            </div>
+            <div id="conseqmodalroot" class="modalbody">
+            </div>
+        </div>
+    </div>
+    <div id="endgamemodal" class="modal infomodal">
+        <div class="infomodalcontent">
+            <div class="modalheader">
+                <p class="info-header-text">You have reached the end</p>
+            </div>
+            <div id="conclusionmodalroot" class="modalbody">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/scripts/onload.js"></script>
+<script src="/scripts/modalcontrol.js"></script>
+<script src="/scripts/dragcontrol.js"></script>
+<script src="/scripts/cardmover.js"></script>
+<script src="/scripts/gamemanager.js"></script>
+<script src="/scripts/actionturn.js"></script>
+<script src="/scripts/gameutils.js"></script>
+{% endblock %}

@@ -1,0 +1,23 @@
+{
+  "name": "decisions-disruptions-clone",
+  "version": "1.0.0",
+  "description": "Cyber Security discussion game based on Decisions and Disruptions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamAndPel/decisions-disruptions-clone.git"
+  },
+  "author": "Sam Anderson-Peled (Atkins UK)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/SamAndPel/decisions-disruptions-clone/issues"
+  },
+  "homepage": "https://github.com/SamAndPel/decisions-disruptions-clone#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nunjucks": "^3.2.3"
+  }
+}

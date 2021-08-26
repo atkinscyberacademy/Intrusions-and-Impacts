@@ -1,0 +1,32 @@
+/* Dragdrop CSS document */
+/* Defines styles for drag-drop spaces */
+
+.dragspace {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  visibility: hidden;
+  opacity: 0.9;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-dark-colour);
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--emph-a-colour),
+    var(--emph-a-colour) 5px,
+    var(--bg-header-colour) 5px,
+    var(--bg-header-colour) 25px
+  );
+  transition: 0.1s ease;
+}
+
+.dragspacetext {
+  background: var(--bg-header-colour);
+  padding: 20px;
+  border-radius: 15px;
+  font-size: 2em;
+  pointer-events: none;
+}

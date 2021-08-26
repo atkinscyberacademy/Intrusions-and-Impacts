@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Intrusions and Impact</title>
+        <link rel="icon" href="/images/cybersteve.png" type="image/png">
+        <link rel="stylesheet" href="styles/root.css" type="text/css">
+        <link rel="stylesheet" href="styles/header.css" type="text/css">
+        <link rel="stylesheet" href="styles/footer.css" type="text/css">
+        {% block meta %}
+        {% endblock %}
+    </head>
+
+    <body>
+        <div id="wrapper">
+
+            <!-- HEADER BAR -->
+            <header>
+                <div id="headerleft">
+                    <img id="headerimg" src="images/cybersteve.png" alt="Image of Cyber Steve">
+                    <a id="headertitle" href="/">Intrusions and Impact</a>
+                </div>
+                <div id="headerright">
+                    <a class="headerlink" href="/game">Play</a>
+                    <a class="headerlink" href="/howtoplay">How to play</a>
+                    <a class="headerlink" href="/about">Why should you care?</a>
+                </div>
+            </header>
+
+            <!-- MAIN CONTENT -->
+            <main>
+                {% block content %}
+                {% endblock %}
+            </main>
+
+            <!-- PADDING (to push the footer down if necessary) -->
+            <div id="pad">
+            </div>
+
+            <!-- FOOTER -->
+            <footer>
+                <p>Inspired by <i><a class="understatedlink" href="https://www.decisions-disruptions.org">Decisions and Disruptions</a></i> (Lancaster University), built by Sam, Shevani, Adam and Hanna - Copyright August 2021</p>
+            </footer>
+
+        </div>
+
+        {% block scripts %}
+        {% endblock %}
+        
+    </body>
+</html>

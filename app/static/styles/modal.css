@@ -1,0 +1,255 @@
+/* Modal CSS document */
+/* Defines styles for modal elements (intro, card, consequence, conclusion) */
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto;
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+}
+
+@-webkit-keyframes modalin {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalin {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modallinkspace {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.modallink {
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 10px;
+  padding: 20px;
+  border: 0;
+  border-radius: 5px;
+  width: 8rem;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--bg-page-colour);
+  color: var(--text-colour);
+  cursor: pointer;
+}
+
+.modallink:hover {
+  background-color: var(--emph-b-colour);
+}
+
+/* Big card elements */
+.cardmodalcontent {
+  background-color: var(--bg-header-colour);
+  margin: 2rem auto;
+  padding: 25px;
+  border: 1px solid var(--text-colour);
+  width: 40rem; /* Could be more or less, depending on screen size */
+  border-radius: 50px;
+  -webkit-animation-name: modalin;
+  animation-name: modalin;
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.big-card-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 2rem 10px auto;
+  padding: 0;
+}
+
+.big-card-image {
+  margin: 5px auto;
+  padding: 0;
+  width: 15rem;
+  height: 15rem;
+  object-fit: contain;
+}
+
+.big-card-cost {
+  color: var(--green-colour);
+  font-style: italic;
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.big-card-shortdesc {
+  font-size: 1.2rem;
+}
+
+.big-card-longdesc {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/* Info elements */
+.infomodalcontent {
+  background-color: var(--bg-header-colour);
+  margin: 3rem auto;
+  padding: 0;
+  border: 0;
+  width: 70%; /* Could be more or less, depending on screen size */
+  -webkit-animation-name: modalin;
+  animation-name: modalin;
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  text-align: center;
+}
+
+.modalheader {
+  background-color: var(--red-colour);
+  padding: 20px;
+}
+
+.modalbody {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-header-text {
+  font-weight: bold;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.consequence-div {
+  margin: 5px auto 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.topbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sourcetext {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.scoretext {
+  font-style: italic;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.good {
+  color: var(--green-colour);
+}
+
+.bad {
+  color: var(--red-colour);
+}
+
+.info-body-text {
+  font-size: 1rem;
+  font-style: italic;
+  margin: 20px 10px;
+}
+
+.stinger {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.conseqimage {
+  margin: 0 auto 15px;
+  height: 10rem;
+  object-fit: contain;
+}
+
+.conclimage {
+  margin: 0 auto 15px;
+  height: 16rem;
+  object-fit: contain;
+}
+
+.conclscore {
+  font-size: 5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.collapsibletrigger {
+  margin: 0;
+  background-color: var(--bg-page-colour);
+  padding: 10px;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.collapsibletrigger:after {
+  content: "+";
+  float: right;
+  margin: 0 10px 0 0;
+  padding: 0;
+  color: var(--text-colour);
+  font-weight: bold;
+}
+
+.collapsibleopen {
+  border-radius: 5px 5px 0 0;
+}
+
+.collapsibleopen:after {
+  content: "-";
+}
+
+.collapsiblecontent {
+  overflow: hidden;
+  background-color: var(--bg-page-colour);
+  max-height: 0;
+  transition: max-height 0.3s ease;
+  border-radius: 0 0 5px 5px;
+}
