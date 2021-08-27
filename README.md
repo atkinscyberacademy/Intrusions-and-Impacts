@@ -70,3 +70,6 @@ If score values are changed, it may be wise to revisit the endgame score thresho
 
 ### Graphical elements
 The graphics work using PNG transparency. All defences are visualised as 'overlays', files of the same dimension as the baseplate image with areas of transparency surrounding the upgraded component. All assets sit on top of the gameboard baseplate image using absolute positioning, and are defined at page request when Nunjucks preprocesses the page. When a defence is played, it's associated overlay if located and has its opacity faded from 0 to 1 over two seconds. Whilst this occurs, the 'cyber steve' overlay `/app/static/images/board/hammersteve/.png` (again, transparent background) is animated using CSS keyframes in `/app/static/styles/playspace.css`.
+
+### Code Map
+![Visualization](./diagram.svg)
