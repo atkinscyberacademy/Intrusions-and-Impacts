@@ -9,7 +9,7 @@ This is a web-port of the card/tabletop/lego game [Decisions and Disruptions](ht
    * `git clone git@github.com:atkinscyberacademy/Intrusions-Impact.git`
    * Click https://github.com/atkinscyberacademy/Intrusions-Impact/archive/refs/heads/main.zip
 1. Install Node.js from the [Node.js website](https://nodejs.org/en/)
-1. Open command line in the root directory
+1. Open command line in the project root directory (e.g. cd Intrusions-Impact)
 1. Run `npm install` to install required dependancies
 1. Run `node index.js` to start the server
 1. Navigate to [localhost:3000](localhost:3000)
