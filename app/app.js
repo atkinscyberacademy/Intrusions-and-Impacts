@@ -22,7 +22,7 @@ nunconf.addFilter("moneycomma", (input) => {
 });
 
 // Set port to 3000
-// const PORT = 3000;
+const PORT = 8080;
 
 // ROUTES ---------------------------------------------------------------------
 app.get("/", (req, res) => {
